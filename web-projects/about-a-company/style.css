@@ -1,0 +1,173 @@
+/*
+    Author: John Burch
+    Date: September 22, 2025
+    External Style Sheet
+*/
+
+/* Google Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+/*
+- background-color sets the background color of the page to the hex code provided
+- font-family sets the "default" font to Montserrat (imported from Google), with sans-serif as the back-up font
+- font-weight sets the weight or thickness to 500 (medium)
+- text-align sets the "default" alignment of all text to the center
+*/
+body {
+    background-color: #bddbe6;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+/*
+- background-color changes the background color of the company name (h1) text to white
+- font-family changes the company name's font to Oxanium (imported from Google), with sans-serif as the back-up font 
+- font-size sets the size of the text to 48px
+- display makes the heading display as an inline-block so that the padding, margins, border, etc. can be adjusted while only taking up as much space as the text
+- padding adds space inside the box with 10px for top+bottom and 15px for left+right (it also affects the size of the white background)
+- border adds a solid black border 5px wide around the padding and content
+*/
+h1 {
+    background-color: white;
+    font-family: "Oxanium", sans-serif;
+    font-size: 48px;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 5px solid black;
+}
+
+/* Semantic Tags */
+
+/*
+- border-top creates a solid black border 2px wide on the top of the footer
+- clear resets both right and left floats specifically for the product page, so that the products do not collapse into the footer
+*/
+footer {
+    border-top: 2px solid black;
+    clear: both;
+    padding: 15px 0;
+}
+
+/* Classes and IDs */
+
+/*
+- background-color sets the navigation bar's background color to the hex code provided
+- list-style-type sets the appeareance of markers to none
+- margin resets the margin on all four sides to zero
+- padding adds 10px of space inside the box for all 4 sides
+*/
+.main-nav {
+    background-color: #ebebeb;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+/*
+- display sets the main-nav list to be treated as inline, so that they are side-by-side
+*/
+.main-nav li {
+    display: inline;
+}
+
+/*
+- text-decoration resets the default underlining of hyperlinks to none
+- color resets the color of the hyperlinks to black (instead of purple/blue)
+- padding sets the padding for the hyperlinks to 0 for the top+bottom and 10px for the left+right (creates space between the hyperlinks)
+*/
+.main-nav li a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+}
+
+/*
+- background-color changes the color to the hex code provided when hyperlinks are focused via keyboard shortcuts or when the cursor hovers above it
+- outline creates a solid blue 5px outside a hyperlink's border when focused/hovered
+*/
+footer a:hover,
+footer a:focus,
+.main-nav li a:hover,
+.main-nav li a:focus {
+    background-color: #ccc;
+    outline: 5px solid #007acc;
+}
+
+/*
+- font-style sets the tagline's font to italic
+*/
+.tagline {
+    font-style: italic;
+}
+
+/*
+- margin sets each product section's top+bottom margin to 40px and left+right to auto
+- max-width limits how wide each product section is to 900px
+- text-align resets the alignment of all text in the product section to the left
+- clear resets the floats for each product section so images do not collapse (clearfix)
+*/
+.product-section {
+    margin: 40px auto;
+    max-width: 900px;
+    text-align: left;
+    clear: both;
+}
+
+/*
+- width sets the product images to 250px wide
+- border-radius adds a rounded corner with a 10px radius to the images
+*/
+.product-section img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+/*
+- float sets images under odd numbered product sections (nth-of-type) to the left
+- margin sets these images to have a top+left margin of 0 and right+bottom margin of 20px
+*/
+.product-section:nth-of-type(odd) img {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+/*
+- float sets images under even numbered product sections to the right
+- margin sets these images to have a top+right margin of 0 and bottom+left margin of 20px
+*/
+.product-section:nth-of-type(even) img {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+/*
+- text-align aligns even numbered product headings (h3) and paragraphs to the right
+*/
+.product-section:nth-of-type(even) h3,
+.product-section:nth-of-type(even) p {
+    text-align: right;
+}
+
+/*
+- height automatically adjusts the home image in relation to the width
+- max-width sets the image's maximum width to 100%, so it will stay within the container
+- border-radius adds a rounded corner with a 50px radius to the home image
+- margin sets the image's top+bottom margins to 20px and the left+right margins to automatic so that the entire element is centered
+*/
+#home-img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 50px;
+    margin: 20px auto;
+}
+
+/*
+- max-width limits how wide the About paragraph is to 800px
+- margin sets the About paragraph's margins to 20px and the left+right margins to automatic for centering.
+*/
+#about-text {
+    max-width: 800px;
+    margin: 20px auto;
+}

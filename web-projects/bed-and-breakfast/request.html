@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+        Author: John Burch
+        Date: October 6, 2025
+        Filename: request.html
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burch Tree Inn | Info Form</title>
+    <script src="https://kit.fontawesome.com/45084c80e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="clearfix">
+        <img src="img/burch-tree-inn-logo.png" alt="Burch Tree Inn">
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html"><i class="fa-solid fa-hotel"></i> Home</a></li>
+            <li><a href="rooms.html"><i class="fa-solid fa-bed"></i> Rooms &amp; Amenities</a></li>
+            <li><a href="request.html" aria-current="page"><i class="fa-solid fa-envelope"></i> Info Request Form</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="clearfix">
+        <h2>Information Request Form</h2>
+        <form method="get" action="thankyou.html">
+            <fieldset class="contact-info">
+                <legend>Contact Information</legend>
+                <p>
+                    <label for="fnameinput">First Name:</label>
+                    <input type="text" name="fname" id="fnameinput" placeholder="First Name" required>
+                </p>
+
+                <p>
+                    <label for="lnameinput">Last Name:</label>
+                    <input type="text" name="lname" id="lnameinput" placeholder="Last Name" required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="example@email.com">
+                </p>
+
+                <p>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="123-456-7890"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </p>
+
+                <p>
+                    <label for="contactPreference">Preferred method of contact:</label>
+                    <select name="contactPreference" id="contactPreference">
+                        <option value="phone">Phone</option>
+                        <option value="email">Email</option>
+                    </select>
+                </p>
+            </fieldset>
+            <fieldset class="room-preferences">
+                <legend>Room Preferences</legend>
+                <p>
+                    <input type="radio" name="room" id="treehouse" value="treehouse">
+                    <label for="treehouse">The Tree House</label>
+                </p>
+                <p>
+                    <input type="radio" name="room" id="woodland" value="woodland">
+                    <label for="woodland">Woodland Suite</label>
+                </p>
+                <p>
+                    <input type="radio" name="room" id="pine" value="pine">
+                    <label for="pine">Pine Loft</label>
+                </p>
+                <p>
+                    <input type="radio" name="room" id="garden" value="garden">
+                    <label for="garden">Garden Room</label>
+                </p>
+            </fieldset>
+            <fieldset class="amenities-interests">
+                <legend>Amenities Interested In</legend>
+                <p>
+                    <input type="checkbox" name="amenities" id="breakfast" value="breakfast">
+                    <label for="breakfast">Complimentary Breakfast</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="amenities" id="piano" value="piano">
+                    <label for="piano">Piano Lounge</label>
+                </p>
+                <p>
+                    <input type="checkbox" name="amenities" id="scenery" value="scenery">
+                    <label for="scenery">Outdoor Scenic View</label>
+                </p>
+            </fieldset>
+            <fieldset class="additional-comments">
+                <legend>Questions or Comments</legend>
+                <p>
+                    <label for="comments" style="display: none;">Questions or Comments:</label>
+                    <textarea name="comments" id="comments" rows="12" cols="60"
+                        placeholder="I would like..."></textarea>
+                </p>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <footer>
+        <p>Email: <a href="mailto:johnb@musecollab.com">johnburch@burchtreeinn.com</a></p>
+        <p>Phone: <a href="tel:123456789">(123) 456-7890</a></p>
+        <p class="copyright-line">Copyright 2025 &copy; Burch Tree Inn by John Burch</p>
+    </footer>
+    <a href="#top" class="top-button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+</body>
+
+</html>

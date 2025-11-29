@@ -1,0 +1,225 @@
+/*
+    Author: John Burch
+    Date: October 6, 2025
+    External Style Sheet
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+/* General Site Styling */
+
+body {
+    background-color: #dbd4c6; /* sets the background color to the hexcode provided */
+    text-align: center; /* sets the "default" text alignment to center */
+    font-family: "Quicksand", sans-serif; /* sets the "default" font to the Google font import "Quicksand" */
+    font-weight: 500; /* increases the weight of the font to 500 */
+    font-size: 18px; /* increases default font size to 18px */
+    margin: 0; /* sets the default margin of the entire body to 0 (none) */
+}
+
+header {
+    background-color: white;
+    padding: 5px 0; /* adds padding of 5px for top+bottom and 0px for left+right of the header */
+}
+
+nav {
+    background-color: #3f504e;
+    padding: 10px 20px;
+    position: sticky; /* makes the navigation bar sticky */
+    top: 0; /* an offset property to make the nav stick to the top when user scrolls away */
+    z-index: 10; /* z-index positions the nav to be stacked on top of all elements */
+}
+
+h2,
+caption {
+    font-family: "Poiret One", sans-serif; /* a seperate font "Poiret One" for h2 and caption */
+}
+
+section {
+    max-width: 650px; /* sets a maximum width of 650px for sections*/
+    margin: 30px auto; /* sets a 30px top+bottom margin and centers (auto) the sections */
+}
+
+section img {
+    border: 5px solid white; /* adds a 5px wide solid white border around images */
+    border-radius: 20px; /* adds a 20px rounded edge to images */
+}
+
+footer {
+    background-color: #3f504e;
+    color: white;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+}
+
+/* Table Styling */
+
+table {
+    margin: 30px auto;
+    table-layout: fixed; /* table-layout defines a fixed width (see below) of the table's columns */
+    width: 80%; /* defines a 80% width (in relation to its parent "main") for table-layout */
+}
+
+caption {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px; /* specifies a bottom margin of 20px */
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    border-collapse: collapse; /* border-collapse removes the double borders */
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+th {
+    background-color: #aebcba;
+}
+
+/* Form Styling */
+
+form {
+    background-color: #aebcba;
+    border: 2px solid black;
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 10px 0;
+}
+
+fieldset {
+    border: 1px dashed grey;
+    padding: 15px;
+    margin: 10px;
+}
+
+.contact-info {
+    float: left; /* floats the contact information fieldset to the left */
+    width: 40%; /* sets the width of the fieldset to 40% of the parent container */ 
+}
+
+.room-preferences,
+.amenities-interests {
+    float: right;
+    width: 40%;
+    text-align: left;
+}
+
+.additional-comments {
+    margin: 15px auto;
+    width: 450px;
+}
+
+legend {
+    font-family: "Poiret One", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.contact-info label {
+   width: 100px;
+   display: inline-block; /* makes the labels in the fieldset inline-block to align with the inputs */
+   text-align: right;
+   margin-right: 8px;
+}
+
+.contact-info input,
+.contact-info select {
+    box-sizing: border-box; /* ensures that the width (230px) of the input/select of the contact-info remains the same even with padding and border */
+    font-family: inherit;
+    width: 230px;
+    padding: 8px;   
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+textarea {
+    font-family: inherit;
+}
+
+input[type=submit] {
+    font-family: inherit;
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+    /* changes the background color and font weight when submit button is hovered or focused */
+    background-color: #d8f0c7;
+    font-weight: 600;
+}
+
+/* Classes */
+
+.clearfix::after { /* a clearfix for clearing floats and resolving header and sticky nav issues */
+    content: ""; /* creates an "invisible" pseudo-element */
+    display: block; /* makes the pseudo-element a block element */
+    clear: both; /* clears floats on both sides */
+}
+
+.navbar {
+    list-style-type: none; /* removes any markers for the navbar lists */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar li a {
+    text-decoration: none; /* removes any text decorations for navbar links */
+    color: white;
+    padding: 3px 15px;
+}
+
+.navbar li a:hover,
+.navbar li a:focus,
+footer a:hover,
+footer a:focus {
+    /* accessibility color changes for when navbar/footer links are hovered or focused */
+    background-color: #dbd4c6;
+    outline: 5px solid #80767f;
+    color: black;
+}
+
+.discount {
+    position: absolute; /* sets the discount badge's position to absolute */
+    top: 0; /* positions the discount badge to the top right of the container (table data) */
+    right: 0;
+    padding: 4px;
+    background-color: #fff544;
+}
+
+.copyright-line {
+    font-size: 15px;
+    font-style: italic; /* italicizes the copyright line in the footer */
+}
+
+.top-button {
+    position: fixed; /* makes the back-to-top button have a fixed position (almost bottom-right) in the viewport */
+    bottom: 10px;
+    right: 10px;
+    color: black;
+    font-size: 30px;
+    background-color: #dbd4c6;
+}
+
+.top-button:hover,
+.top-button:focus {
+    /* acessibility color changes for back-to-top button */
+    background-color: black;
+    color: white;
+}
