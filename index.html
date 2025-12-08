@@ -19,37 +19,39 @@
             <img src="img/placeholder-resized-1024.jpg" alt="placeholder" id="profile-img">
             <h1>John Burch</h1>
             <p class="tagline">Aspiring DevOps Engineer</p>
-            <ul class="contact-info">
-                <li>Email: <a href="mailto:johnb.stuff@gmail.com">johnb.stuff@gmail.com</a></li>
-                <li>Springfield, MO</li>
-            </ul>
             <nav>
                 <ul class="navbar">
-                    <li><a href="#about-me">About Me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#summary"><i class="fa-solid fa-user"></i> Professional Summary</a></li>
+                    <li><a href="#experience"><i class="fa-solid fa-toolbox"></i> Skills &amp; Experience</a></li>
+                    <li><a href="#projects"><i class="fa-solid fa-computer"></i> Projects</a></li>
                 </ul>
             </nav>
         </header>
     </div>
     <main>
-        <section id="about-me">
-            <h2>About Me</h2>
-            <!-- About Me Section -->
+        <section id="summary" class="summary-section">
+            <h2>Professional Summary</h2>
+            <p>Motivated and detail-oriented student preparing to graduate with an Associate of Arts in General Studies. Known for strong problem-solving abilities, especially when troubleshooting software, managing home-lab environments, and working with Linux-based systems. Consistent and enthusiastic team player with well-developed communication skills. Eager to continue learning and growing within the IT field.</p>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <!-- Skills and Experience -->
+        <section id="skills-experience" class="skills-section">
+            <h2>Skills &amp; Experience</h2>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="projects-section">
             <h2>Projects</h2>
-            <!-- Projects -->
+            <picture>
+                <source media="(min-width: 768px)" srcset="img/web-projects-showcase-md.jpg">
+                <source media="(min-width: 1024px)" srcset="img/web-projects-showcase-lg.jpg">
+                <img src="img/web-projects-showcase.jpg" alt="" class="projects-showcase-img">
+            </picture>
         </section>
     </main>
     <footer>
-        
+        <ul class="contact-info">
+            <li>Email: <a href="mailto:johnb.stuff@gmail.com">johnb.stuff@gmail.com</a></li>
+            <li>Springfield, MO</li>
+        </ul>
     </footer>
 </body>
 </html>
