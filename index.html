@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--
         Author: John Burch
@@ -13,18 +14,20 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/45084c80e8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="header-container">
         <header>
-            <img src="img/john-profile-picture.jpg" alt="John with a graduation cap and formal clothing" id="profile-img">
+            <img src="img/john-profile-picture.jpg" alt="Portrait photo of John Burch wearing a graduation cap and formal clothing"
+                id="profile-img">
             <h1>John Burch</h1>
             <p class="tagline">Aspiring DevOps Engineer</p>
             <nav>
                 <ul class="navbar">
-                    <li><i class="fa-solid fa-user"></i><a href="#summary">Professional Summary</a></li>
-                    <li><i class="fa-solid fa-toolbox"></i><a href="#skills">Skills &amp; Experience</a></li>
-                    <li><i class="fa-solid fa-computer"></i><a href="#projects">Web Dev Projects</a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">Contact Form</a></li>
+                    <li><i class="fa-solid fa-user" aria-hidden="true"></i><a href="#summary">Professional Summary</a></li>
+                    <li><i class="fa-solid fa-toolbox" aria-hidden="true"></i><a href="#skills">Skills &amp; Experience</a></li>
+                    <li><i class="fa-solid fa-computer" aria-hidden="true"></i><a href="#projects">Web Dev Projects</a></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="#contact">Contact Form</a></li>
                 </ul>
             </nav>
         </header>
@@ -32,8 +35,10 @@
     <main>
         <section class="summary-section">
             <h2 id="summary">Professional Summary</h2>
-            <p>Motivated and detail-oriented student preparing to graduate with an Associate of Arts in General Studies.</p>
-            <p>Known for strong problem-solving abilities, especially when troubleshooting software, managing home-lab environments, and working with Linux-based systems.</p>
+            <p>Motivated and detail-oriented student preparing to graduate with an Associate of Arts in General Studies.
+            </p>
+            <p>Known for strong problem-solving abilities, especially when troubleshooting software, managing home-lab
+                environments, and working with Linux-based systems.</p>
             <p>Consistent and enthusiastic team player with well-developed communication skills.</p>
             <p>Eager to continue learning and growing within the IT field.</p>
         </section>
@@ -63,36 +68,41 @@
         <section class="projects-section">
             <h2 id="projects">Web Dev Projects</h2>
             <div class="website-showcase-container">
-                <section class="website-showcase">
-                    <h3><i class="fa-solid fa-music"></i><a href="web-projects/music-artist" target="_blank">Music Artist</a></h3>
+                <article class="website-showcase">
+                    <h3><i class="fa-solid fa-music"></i><a href="web-projects/music-artist" target="_blank">Music
+                            Artist</a></h3>
                     <p>A website showcasing one of my (many) hobbies. My first usage of Flexbox and embedded media.</p>
-                </section>
-                <section class="website-showcase">
-                    <h3><i class="fa-solid fa-building"></i><a href="web-projects/about-a-company" target="_blank">About A Company (MuseCollab)</a>
+                </article>
+                <article class="website-showcase">
+                    <h3><i class="fa-solid fa-building"></i><a href="web-projects/about-a-company" target="_blank">About
+                            A Company (MuseCollab)</a>
                     </h3>
-                    <p>A website for a fictional music collaboration software company. A project I am very proud of due to the leap
+                    <p>A website for a fictional music collaboration software company. A project I am very proud of due
+                        to the leap
                         in knowledge and quality.</p>
-                </section>
-                <section class="website-showcase website-last">
-                    <h3><i class="fa-solid fa-bed"></i><a href="web-projects/bed-and-breakfast" target="_blank">Bed and Breakfast (Burch Tree
+                </article>
+                <article class="website-showcase website-last">
+                    <h3><i class="fa-solid fa-bed"></i><a href="web-projects/bed-and-breakfast" target="_blank">Bed and
+                            Breakfast (Burch Tree
                             Inn)</a></h3>
-                    <p>A website for a fictional hotel. My favorite project I've worked on so far. Uses HTML tables and forms.</p>
-                </section>
+                    <p>A website for a fictional hotel. My favorite project I've worked on so far. Uses HTML tables and
+                        forms.</p>
+                </article>
             </div>
             <picture>
                 <source media="(min-width: 768px)" srcset="img/web-projects-showcase-md.jpg">
                 <source media="(min-width: 1024px)" srcset="img/web-projects-showcase-lg.jpg">
-                <img src="img/web-projects-showcase.jpg" alt="Collage showcasing the website projects" class="projects-showcase-img">
+                <img src="img/web-projects-showcase.jpg" alt="Collage showcasing the website projects"
+                    class="projects-showcase-img">
             </picture>
         </section>
 
         <section class="contact-form-section">
             <h2 id="contact">Contact Form</h2>
-            <p></p>
             <div class="form-container">
                 <form action="contact-submission.html" method="get">
                     <fieldset class="contact-info">
-                        <legend>Contact information</legend>
+                        <legend class="hidden">Contact information</legend>
                         <p>
                             <label for="fnameinput">First Name:</label>
                             <input type="text" name="fname" id="fnameinput" placeholder="First Name" required>
@@ -101,18 +111,18 @@
                             <label for="lnameinput">Last Name:</label>
                             <input type="text" name="lname" id="lnameinput" placeholder="Last Name" required>
                         </p>
-            
+
                         <p>
                             <label for="email">Email:</label>
                             <input type="email" name="email" id="email" placeholder="example@email.com">
                         </p>
-            
+
                         <p>
                             <label for="phone">Phone:</label>
                             <input type="tel" name="phone" id="phone" placeholder="123-456-7890"
                                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                         </p>
-            
+
                         <p>
                             <label for="contactPreference">Preferred method of contact:</label>
                             <select name="contactPreference" id="contactPreference">
@@ -122,9 +132,9 @@
                         </p>
                     </fieldset>
                     <fieldset class="additional-comments">
-                        <legend>Questions or Comments</legend>
+                        <legend class="hidden">Questions or Comments</legend>
                         <p>
-                            <label for="comments" style="display: none;">Questions or Comments:</label>
+                            <label for="comments">Questions or Comments:</label>
                             <textarea name="comments" id="comments" rows="5" cols="35"
                                 placeholder="I'm interested in..."></textarea>
                         </p>
@@ -137,10 +147,11 @@
     <footer>
         <ul>
             <li>Email: <a href="mailto:johndburch01@outlook.com">johndburch01@outlook.com</a></li>
-            <li>Phone: <a href="tel:123456789">(123) 456-7890</a></li>
+            <li>Phone: <a href="tel:123-456-7890">123-456-7890</a></li>
             <li class="address-line">Springfield, MO 65809</li>
         </ul>
         <p class="copyright">Copyright 2025 &copy; Website by John Burch</p>
     </footer>
 </body>
+
 </html>
