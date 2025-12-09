@@ -21,8 +21,9 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     min-height: 100vh;
     text-align: center;
-    display: grid;
     margin: 2rem;
+    /* Grid setup for media queries */
+    display: grid;
     gap: 2rem;
     grid-template-areas:
         'header-nav'
@@ -34,11 +35,13 @@ body {
 }
 
 main {
-    display: contents;
+    /* Allows children to participate directly to parent (grandparent)*/
+    display: contents; 
 }
 
 h1 {
     font-family: "Ubuntu", sans-serif;
+    font-size: 2.75em;
     display: inline-block;
 }
 
@@ -49,8 +52,10 @@ h2 {
 }
 
 :target {
-    font-weight: 600;
-    border-bottom: 1px solid black;
+    font-weight: 800;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    padding: 0.5rem;
 }
 
 section {
@@ -71,13 +76,17 @@ section {
     grid-area: header-nav;
 }
 
+.tagline {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
 nav {
     padding: 1em 0;
 }
 
 .navbar {
     grid-area: navbar;
-    list-style-type: none;
     display: grid;
     gap: 0.5em;
     grid-template-columns: 100%;
@@ -88,20 +97,42 @@ nav {
 nav a {
     padding: 8px;
     font-size: 1.2em;
-    text-decoration: none;
-    color: black;
 }
 
 nav i {
     font-size: 14px;
 }
 
-footer {
-    text-align: center;
-    grid-area: footer;
+.navbar,
+footer ul {
+    list-style-type: none;
 }
 
+nav a,
+footer a {
+    color: black;
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+.copyright {
+    margin-top: 0.5rem;
+}
+
+
 /* Main Sections Styling */
+
+/* Summary */
 
 .summary-section {
     grid-area: summary;
@@ -113,40 +144,63 @@ footer {
     margin-bottom: 0.75em;
 }
 
+/* Skills */
+
 .skills-section {
     grid-area: skills;
 }
 
 .skills-list-container {
-    
+    display: grid;
 }
 
 .skills-list {
     text-align: left;
+    margin: 0;
+    width: 100%;
+    height: auto;
 }
+
+.skills-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects */
 
 .projects-section {
     grid-area: projects;
 }
 
-.contact-form-section {
-    grid-area: contact;
-    width: 100%;
+.website-showcase-container {
+    margin: 1rem auto;
+    max-width: 330px;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+}
+
+.website-showcase a {
+    color: black;
+    font-weight: 400;
+}
+
+.website-showcase p {
+    line-height: 1.5em;
 }
 
 .projects-showcase-img {
-    max-width: 100%;
+    max-width: 425px;
     width: 100%;
     height: auto;
     border-radius: 1em;
 }
 
-.tagline {
-    font-style: italic;
-    padding-bottom: 0.8em;
-}
+/* Contact Form */
 
-/* Contact Form Styling */
+.contact-form-section {
+    grid-area: contact;
+    width: 100%;
+}
 
 .form-container {
     background-color: rgba(255, 255, 255, 0.5);
@@ -187,7 +241,7 @@ fieldset {
     display: block;
     width: 90%;
     margin: 0 auto;
-    padding: 0.5em;   
+    padding: 0.5em;
     border: 1px solid gray;
     border-radius: 0.5em;
 }
@@ -224,6 +278,12 @@ input[type=submit]:focus {
     margin-top: 8px;
 }
 
+/* Accessibility Features */
+
+a:hover {
+    font-weight: bold;
+}
+
 /* Media Query for Tablets */
 
 @media (min-width: 768px) {
@@ -250,7 +310,31 @@ input[type=submit]:focus {
     .summary-section p {
         text-align: left;
     }
-    
+
+    .skills-list-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-list {
+        margin: 0 auto;
+        width: unset;
+    }
+
+    .website-showcase-container {
+        width: 90%;
+        max-width: none;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .website-last {
+        grid-column: 1 / span 2;
+        width: 65%;
+    }
+
+    .projects-showcase-img {
+        max-width: 80%;
+    }
+
     .form-container {
         max-width: 100%;
     }
@@ -285,6 +369,14 @@ input[type=submit]:focus {
     input[type=submit] {
         grid-column: 1 / span 2;
     }
+
+    footer ul {
+        grid-template-columns: auto auto;
+    }
+
+    .address-line {
+        grid-column: 1 / span 2;
+    }
 }
 
 /* Media Query for Laptops */
@@ -302,13 +394,31 @@ input[type=submit]:focus {
             'footer footer';
     }
 
-    .header-container {
-
+    .navbar {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 1fr;
     }
 
-    .navbar {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+    .summary-section p {
+        margin: 0.75em auto 0 auto;
+        max-width: 90%;
+    }
+
+    .skills-list-container {
+        grid-template-columns: auto;
+    }
+
+    .skills-list {
+        width: 100%;
+    }
+
+    .website-showcase-container {
+        grid-template-columns: auto auto auto;
+    }
+
+    .website-last {
+        grid-column: initial;
+        width: unset;
     }
 
     form {
