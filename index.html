@@ -22,29 +22,90 @@
             <nav>
                 <ul class="navbar">
                     <li><a href="#summary"><i class="fa-solid fa-user"></i> Professional Summary</a></li>
-                    <li><a href="#experience"><i class="fa-solid fa-toolbox"></i> Skills &amp; Experience</a></li>
+                    <li><a href="#skills"><i class="fa-solid fa-toolbox"></i> Skills &amp; Experience</a></li>
                     <li><a href="#projects"><i class="fa-solid fa-computer"></i> Projects</a></li>
                 </ul>
             </nav>
         </header>
     </div>
     <main>
-        <section id="summary" class="summary-section">
-            <h2>Professional Summary</h2>
-            <p>Motivated and detail-oriented student preparing to graduate with an Associate of Arts in General Studies. Known for strong problem-solving abilities, especially when troubleshooting software, managing home-lab environments, and working with Linux-based systems. Consistent and enthusiastic team player with well-developed communication skills. Eager to continue learning and growing within the IT field.</p>
+        <section class="summary-section">
+            <h2 id="summary">Professional Summary</h2>
+            <p>Motivated and detail-oriented student preparing to graduate with an Associate of Arts in General Studies.</p>
+            <p>Known for strong problem-solving abilities, especially when troubleshooting software, managing home-lab environments, and working with Linux-based systems.</p>
+            <p>Consistent and enthusiastic team player with well-developed communication skills.</p>
+            <p>Eager to continue learning and growing within the IT field.</p>
         </section>
 
-        <section id="skills-experience" class="skills-section">
-            <h2>Skills &amp; Experience</h2>
+        <section class="skills-section">
+            <h2 id="skills">Skills &amp; Experience</h2>
+            <div class="skills-list-container">
+                <ul class="skills-list">
+                    <li>Skill item</li>
+                    <li>Skill item</li>
+                    <li>Skill item</li>
+                    <li>Skill item</li>
+                    <li>Skill item</li>
+                    <li>Skill item</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="projects" class="projects-section">
-            <h2>Projects</h2>
+        <section class="projects-section">
+            <h2 id="projects">Projects</h2>
             <picture>
                 <source media="(min-width: 768px)" srcset="img/web-projects-showcase-md.jpg">
                 <source media="(min-width: 1024px)" srcset="img/web-projects-showcase-lg.jpg">
                 <img src="img/web-projects-showcase.jpg" alt="" class="projects-showcase-img">
             </picture>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Contact Me</h2>
+            <p></p>
+            <div class="form-container">
+                <form action="contact-submission.html" method="get">
+                    <fieldset class="contact-info">
+                        <legend>Contact information</legend>
+                        <p>
+                            <label for="fnameinput">First Name:</label>
+                            <input type="text" name="fname" id="fnameinput" placeholder="First Name" required>
+                        </p>
+                        <p>
+                            <label for="lnameinput">Last Name:</label>
+                            <input type="text" name="lname" id="lnameinput" placeholder="Last Name" required>
+                        </p>
+            
+                        <p>
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="example@email.com">
+                        </p>
+            
+                        <p>
+                            <label for="phone">Phone:</label>
+                            <input type="tel" name="phone" id="phone" placeholder="123-456-7890"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        </p>
+            
+                        <p>
+                            <label for="contactPreference">Preferred method of contact:</label>
+                            <select name="contactPreference" id="contactPreference">
+                                <option value="phone">Phone</option>
+                                <option value="email">Email</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                    <fieldset class="additional-comments">
+                        <legend>Questions or Comments</legend>
+                        <p>
+                            <label for="comments" style="display: none;">Questions or Comments:</label>
+                            <textarea name="comments" id="comments" rows="5" cols="35"
+                                placeholder="I'm interested in..."></textarea>
+                        </p>
+                    </fieldset>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </section>
     </main>
     <footer>

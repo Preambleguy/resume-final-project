@@ -22,12 +22,14 @@ body {
     min-height: 100vh;
     text-align: center;
     display: grid;
-    gap: 1rem;
+    margin: 2rem;
+    gap: 2rem;
     grid-template-areas:
         'header-nav'
         'summary'
         'skills'
         'projects'
+        'contact'
         'footer';
 }
 
@@ -42,7 +44,12 @@ h1 {
 
 h2 {
     display: inline-block;
+    font-weight: 400;
     margin-bottom: 0.25em;
+}
+
+:target {
+    font-weight: 600;
     border-bottom: 1px solid black;
 }
 
@@ -50,21 +57,15 @@ section {
     margin: 0 auto;
 }
 
-section p {
-    margin: 0 1.5rem;
-    max-width: 425px;
-    line-height: 1.5em;
-}
-
 /* Header/Navigation/Footer */
 
 .header-container {
     background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
-    margin: 1rem auto;
-    width: 90%;
+    margin: 0 auto;
+    width: 100%;
     max-width: 425px;
-    height: auto;
+    height: 100%;
     border-radius: 1rem;
     overflow: hidden;
     grid-area: header-nav;
@@ -100,7 +101,118 @@ footer {
     grid-area: footer;
 }
 
-/* Classes and IDs */
+/* Main Sections Styling */
+
+.summary-section {
+    grid-area: summary;
+}
+
+.summary-section p {
+    max-width: 330px;
+    line-height: 1.5em;
+    margin-bottom: 0.75em;
+}
+
+.skills-section {
+    grid-area: skills;
+}
+
+.skills-list-container {
+    
+}
+
+.skills-list {
+    text-align: left;
+}
+
+.projects-section {
+    grid-area: projects;
+}
+
+.contact-form-section {
+    grid-area: contact;
+    width: 100%;
+}
+
+.projects-showcase-img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+}
+
+.tagline {
+    font-style: italic;
+    padding-bottom: 0.8em;
+}
+
+/* Contact Form Styling */
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 425px;
+    height: auto;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+fieldset {
+    border: none;
+}
+
+.contact-info legend {
+    display: none;
+}
+
+.contact-info p {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 1rem auto;
+    max-width: 60%;
+}
+
+.contact-info label {
+    display: inline-block;
+}
+
+.contact-info input,
+.contact-info select {
+    font-family: inherit;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5em;   
+    border: 1px solid gray;
+    border-radius: 0.5em;
+}
+
+textarea {
+    font-family: inherit;
+    padding: 0.5rem;
+    border-radius: 0.5em;
+}
+
+input[type=submit] {
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 125px;
+    height: auto;
+    margin: 1rem auto;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+    background-color: #d8f0c7;
+    font-weight: 600;
+}
+
+/* Specific IDs */
 
 #profile-img {
     display: block;
@@ -112,39 +224,17 @@ footer {
     margin-top: 8px;
 }
 
-.summary-section {
-    grid-area: summary;
-}
-
-.skills-section {
-    grid-area: skills;
-}
-
-.projects-section {
-    grid-area: projects;
-}
-
-.projects-showcase-img {
-    max-width: 100%;
-    width: 80%;
-    height: auto;
-    border-radius: 1em;
-}
-
-.tagline {
-    font-style: italic;
-    padding-bottom: 0.8em;
-}
-
 /* Media Query for Tablets */
 
 @media (min-width: 768px) {
     body {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto 90px;
+        grid-template-rows: auto auto auto auto 90px;
         grid-template-areas:
         'header-nav summary'
-        'skills projects'
+        'skills skills'
+        'projects projects'
+        'contact contact'
         'footer footer';
     }
 
@@ -156,6 +246,45 @@ footer {
     .summary-section {
         align-self: center;
     }
+
+    .summary-section p {
+        text-align: left;
+    }
+    
+    .form-container {
+        max-width: 100%;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-info p {
+        max-width: 50%;
+    }
+
+    .contact-info label {
+        text-align: left;
+    }
+
+    .contact-info input,
+    .contact-info select {
+        margin: unset;
+        max-width: 100%;
+    }
+
+    .additional-comments {
+        align-self: center;
+    }
+
+    textarea {
+        width: auto;
+        height: 200px;
+    }
+
+    input[type=submit] {
+        grid-column: 1 / span 2;
+    }
 }
 
 /* Media Query for Laptops */
@@ -164,21 +293,51 @@ footer {
 
     body {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 1fr 1fr 90px;
+        grid-template-rows: auto auto auto auto 90px;
         grid-template-areas:
             'header-nav header-nav'
             'summary skills'
             'projects projects'
+            'contact contact'
             'footer footer';
     }
 
     .header-container {
-        margin: 2em auto;
+
     }
 
     .navbar {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-info p {
+        grid-template-columns: 1fr 2fr;
+        max-width: 75%;
+    }
+
+    .contact-info label {
+        align-self: center;
+        text-align: right;
+        margin-right: 0.5rem;
+    }
+
+    .contact-info select {
+        align-self: center;
+        height: 35px;
+    }
+
+    .additional-comments {
+        align-self: center;
+    }
+
+    textarea {
+        width: 70%;
+        height: 180px;
     }
 
 }
