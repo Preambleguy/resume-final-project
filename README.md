@@ -8,7 +8,7 @@
 A responsive, online resume reflecting all of the skills learned (excluding Bootstrap) in Web Site Development I.
 
 ### GitHub Pages URL
-Coming soon...
+[https://preambleguy.github.io/resume-final-project/](https://preambleguy.github.io/resume-final-project/)
 
-### Screenshot of Website
-Coming soon...
+### Screenshot
+![Screenshot of Resume Final Project](resume-final-project-screenshot.png)
